@@ -47,14 +47,15 @@ img {
 }
 
 /* HIDE STEP */
-/* .step {
+.step {
     display: none;
-  } */
+}
+
 /* SHOW ACTIVE STEP */
-/* .step.active {
+.step.active {
     display: inline-block;
-  }
-   */
+}
+
 .main__title {
     font-weight: 700;
     color: var(--Marine-blue);
@@ -317,28 +318,30 @@ img {
     text-align: center;
     height: 20px;
     margin-bottom: 5px;
-  }
-  .plan-card-wrapper {
+}
+
+.plan-card-wrapper {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
     min-height: 330px;
-  }
-  
-  .plan-card {
+}
+
+.plan-card {
     display: flex;
     align-items: center;
     cursor: pointer;
     margin-bottom: 20px;
-  }
-  .plan-card > .plan-img {
+}
+
+.plan-card>.plan-img {
     margin-bottom: auto;
     width: 45px;
     height: 45px;
     margin-right: 25px;
-  }
-  
-  .toggle-container {
+}
+
+.toggle-container {
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -347,14 +350,14 @@ img {
     background-color: var(--Magnolia);
     font-weight: 700;
     margin-bottom: 10px;
-  }
+}
 
-  .toggle-container > p {
+.toggle-container>p {
     color: var(--Marine-blue);
     font-weight: 500;
-  }
-  
-  .toggle {
+}
+
+.toggle {
     width: 40px;
     height: 20px;
     border-radius: 15px;
@@ -365,33 +368,290 @@ img {
     margin: 0 12px;
     transition: 0.25s;
     cursor: pointer;
-  }
-  .toggle-circle {
+}
+
+.toggle-circle {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin: 0 2px;
     background-color: var(--White);
-  }
-  .yearly-benefit {
+}
+
+.yearly-benefit {
     color: var(--Marine-blue);
     font-weight: 400;
     padding-top: 5px;
     display: none;
-  }
-  .yearly-benefit.show {
+}
+
+.yearly-benefit.show {
     display: inline-block;
-  }
-  /* add functionality to toggle */
+}
+
+/* add functionality to toggle */
 .toggle.active {
     justify-content: flex-end;
-  }
-  .monthly-plan {
+}
+
+.monthly-plan {
     opacity: 0.5;
-  }
-  .yearly-plan {
+}
+
+.yearly-plan {
     opacity: 0.5;
-  }
-  .selected-plan {
+}
+
+.selected-plan {
     opacity: 1;
-  }
+}
+
+@media (min-width: 850px) {
+    .plan-card-wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding-bottom: 35px;
+    }
+
+    .plan-card {
+        height: 190px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+    }
+
+    .plan-card>.plan-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* BUTTONS */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+#next-button {
+    color: var(--Light-gray);
+    background-color: var(--Marine-blue);
+}
+
+#next-button:hover {
+    transition: background 0.3s;
+    background-color: var(--Purplish-blue);
+}
+
+#prev-button {
+    color: var(--Cool-gray);
+    background-color: var(--White);
+    padding: 0;
+}
+
+#prev-button:hover {
+    color: var(--Marine-blue);
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        background-color: var(--White);
+        width: 100%;
+        padding: 15px 10px;
+    }
+}
+
+/* add hidden class to hide previous step button on the first step */
+.button.hidden {
+    opacity: 0;
+    cursor: auto;
+}
+
+/* add hidden class t0 hide button container */
+.button-container.hidden {
+    display: none;
+}
+
+/* STEP3 | ADDS-ON */
+.addon-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* checkbox */
+.checkbox[type='checkbox'] {
+    margin-right: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: none;
+    font: inherit;
+    color: none;
+    width: 1.2em;
+    height: 1.2em;
+    border: 0.15em solid var(--Light-gray);
+    cursor: pointer;
+    border-radius: 0.2em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+@media (min-width: 480px) {
+    .checkbox[type='checkbox']:hover {
+        border-color: var(--Marine-blue);
+        transition: 0.25s;
+    }
+}
+
+.checkbox[type='checkbox']:checked {
+    border-color: var(--Purplish-blue);
+    background-color: var(--Purplish-blue);
+}
+
+.checkbox[type='checkbox']::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    box-shadow: inset 1em 1em var(--White);
+    transform-origin: bottom left;
+    -webkit-clip-path: polygon(14% 44%,
+            0 65%,
+            50% 100%,
+            100% 16%,
+            80% 0%,
+            43% 62%);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transition: 120ms transform ease-in-out;
+    transform: scale(0);
+}
+
+.checkbox[type='checkbox']:checked::before {
+    transform: scale(1);
+}
+
+.card-text {
+    margin-right: auto;
+}
+
+/* step 4 */
+.summary-card {
+    background-color: var(--Magnolia);
+    border: none;
+    padding: 10px 20px;
+    cursor: auto;
+}
+
+.selected-plan-container {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.toggle-plan {
+    border: none;
+    background-color: transparent;
+    color: var(--Cool-gray);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.toggle-plan:hover {
+    color: var(--Purplish-blue);
+}
+
+#selected-plan {
+    display: flex;
+    align-items: center;
+    color: var(--Marine-blue);
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+#selected-plan>p:nth-child(3) {
+    margin-left: auto;
+}
+
+#selected-plan>p:nth-child(2) {
+    margin-left: 4px;
+}
+
+/* selected add-on */
+#selected-addon>li {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+#selected-addon>li:nth-child(1) {
+    border-top: 1px solid var(--Cool-gray);
+    padding-top: 25px;
+}
+
+#selected-addon>li>p:nth-child(1) {
+    color: var(--Cool-gray);
+}
+
+#selected-addon>li>p:nth-child(2) {
+    color: var(--Marine-blue);
+}
+
+#total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+#total>span:nth-child(1) {
+    color: var(--Cool-gray);
+}
+
+#total>span:nth-child(2) {
+    color: var(--Purplish-blue);
+    font-weight: 700;
+}
+
+/* @media (max-width: 481px) {
+    #total > span:nth-child(2) {
+      font-size: 2rem;
+    }
+  } */
+.thank-you {
+    min-height: 100%;
+    text-align: center;
+}
+
+.thank-you-img {
+    width: 100px;
+    height: 100px;
+    margin-top: 20%;
+    margin-inline: auto;
+    margin-bottom: 35px;
+}
+
+.thank-you>.main-title {
+    padding-bottom: 10px;
+}
+
+.thank-you>.description {
+    max-width: 500px;
+    margin: 0 auto;
+}
