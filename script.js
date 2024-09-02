@@ -1,9 +1,9 @@
 // declare variables and store elements
 const sidebarStep = document.querySelectorAll('.indicator-num');
 const formStep = document.querySelectorAll('.step');
-const form = document.getElementById('step-info');
+const form = document.getElementById('form');
 const planCards = document.querySelectorAll('.plan-card');
-const addonCard = document.querySelectorAll('.addon-card');
+const addOnsCards = document.querySelectorAll('.addon-card');
 const changePlanBtn = document.getElementById('change-plan');
 // empty object to store selected plan, price and duration
 let selectedPlan = {};
@@ -12,7 +12,7 @@ const selectedAddOns = () => {
   // create empty array to store plan details
   let addOnArr = [];
   // loop add-on card to find selected add-on cards
-  addonCard.forEach((card) => {
+  addOnsCards.forEach((card) => {
     // select plan name, price and plan duration
     let price = card.querySelector('.subscription-price').textContent;
     let name = card.querySelector('.card-name').textContent;
@@ -33,8 +33,8 @@ const selectedAddOns = () => {
 // plan prices
 const monthlyPlanPrices = [9, 12, 15];
 const yearlyPlanPrices = [90, 120, 150];
-const monthlyAddonPrice = [1, 2, 2];
-const yearlyAdsOnPrice = [10, 20, 20];
+const monthlyAddOnsPrice = [1, 2, 2];
+const yearlyAddOnsPrice = [10, 20, 20];
 
 // function to change price and duration of the given card
 const setPlan = (card, price, duration) => {
@@ -46,7 +46,7 @@ const setPlan = (card, price, duration) => {
 
 // set default price and duration of the cards
 setPlan(planCards, monthlyPlanPrices, 'mo');
-setPlan(addonCard, monthlyAddonPrice, 'mo');
+setPlan(addOnsCards, monthlyAddOnsPrice, 'mo');
 
 // =====================
 // BUTTONS
@@ -211,12 +211,12 @@ toggle.addEventListener('click', (e) => {
   if (toggle.classList.contains('active')) {
     yearlyBenefit.forEach((item) => item.classList.add('show'));
     setPlan(planCards, yearlyPlanPrices, 'yr');
-    setPlan(addonCard, yearlyAdsOnPrice, 'yr');
+    setPlan(addOnsCards, yearlyAddOnsPrice, 'yr');
     year.classList.add('selected-plan');
     month.classList.remove('selected-plan');
   } else {
     setPlan(planCards, monthlyPlanPrices, 'mo');
-    setPlan(addonCard, monthlyAddonPrice, 'mo');
+    setPlan(addOnsCards, monthlyAddOnsPrice, 'mo');
     yearlyBenefit.forEach((item) => item.classList.remove('show'));
     month.classList.add('selected-plan');
     year.classList.remove('selected-plan');
@@ -244,7 +244,7 @@ planCards.forEach((card) => {
 });
 
 // STEP3 | ADD-ON
-addonCard.forEach((card) => {
+addOnsCards.forEach((card) => {
   // add event listener to the add-on cards
   card.addEventListener('click', (e) => {
     let target = e.currentTarget;
@@ -271,12 +271,12 @@ const renderTotal = () => {
   const planDuration = selectedPlan.planDur === 'mo' ? 'Monthly' : 'Yearly';
   // select element to append selected plan. add-on and total price
   const plan = document.getElementById('selected-plan');
-  const addOnsList = document.getElementById('selected-addon');
+  const addsOnList = document.getElementById('selected-addon');
   const total = document.getElementById('total');
 
   // clear innerHTML of the selected elements
   total.innerHTML = '';
-  addOnsList.innerHTML = '';
+  addsOnList.innerHTML = '';
   plan.innerHTML = '';
 
   // add selected plan
@@ -293,25 +293,25 @@ const renderTotal = () => {
   plan.appendChild(dur);
   plan.appendChild(planPrice);
 
-  // add selectedplan price in total amount
+  // add selectedPlan price in total amount
   totalAmount += parseInt(selectedPlan.planPrice);
 
-  // add selected add-on in addOnsList
+  // add selected add-on in addsOnList
   selectedAddOns().forEach((item) => {
     // create listItem to store selected add-on details
     let listItem = document.createElement('li');
     // addOnName to store add-on title
     let addOnName = document.createElement('p');
     addOnName.textContent = item.name;
-    // addonPrice for add-on price and plan duration
-    let addonPrice = document.createElement('p');
-    addonPrice.textContent = `+$${item.price}/${item.planDur}`;
+    // addOnPrice for add-on price and plan duration
+    let addOnPrice = document.createElement('p');
+    addOnPrice.textContent = `+$${item.price}/${item.planDur}`;
 
-    // append  addOnName and addonPrice to the listItem
+    // append  addOnName and addOnPrice to the listItem
     listItem.appendChild(addOnName);
-    listItem.appendChild(addonPrice);
-    // add list item to then addOnlist
-    addOnsList.appendChild(listItem);
+    listItem.appendChild(addOnPrice);
+    // add list item to then addOnList
+    addsOnList.appendChild(listItem);
 
     // add price to the total price
     totalAmount += parseInt(item.price);
