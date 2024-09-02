@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend Mentor | Multi-step form" />
+    <!-- ---------- -->
+    <!-- FONTS -->
+    <!-- ---------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ----------- -->
+    <!-- FAVICON -->
+    <!-- ----------- -->
     <link
       rel="icon"
       type="image/png"
@@ -10,62 +24,71 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.css" />
-    
+    <!-- ----------- -->
+    <!-- STYLE CSS -->
+    <!-- ----------- -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- -------- -->
+    <!-- SCRIPT -->
+    <!-- -------- -->
+    <script defer src="./script.js"></script>
+
+    <!-- ---------- -->
+    <!-- TITLE -->
+    <!-- ---------- -->
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
-    <div class="main">
-      <div class="step-container">
-        <!-- Sidebar start -->
+    <main class="main">
+      <!-- ----------------- -->
+      <!-- WRAPPER -->
+      <!-- ----------------- -->
+      <div class="step__container">
+        <!-- -------------- -->
+        <!-- SIDEBAR -->
+        <!-- -------------- -->
         <div class="sidebar">
-          <div class="step-indicator">
-            <div class="indicator-num">1</div>
-            <div class="indicator-text">
+          <div class="step__indecater">
+            <div class="indecater__num">1</div>
+            <div class="indecater__text">
               <p class="subtitle">STEP1</p>
-              <p class="mini-title">YOUR INFO</p>
+              <p class="mini__title">Your Info</p>
             </div>
           </div>
-          <div class="step-indicator">
-            <div class="indicator-num">2</div>
-            <div class="indicator-text">
+          <div class="step__indecater">
+            <div class="indecater__num 2">2</div>
+            <div class="indecater__text">
               <p class="subtitle">STEP2</p>
-              <p class="mini-title">SELECT PLAN</p>
+              <p class="mini__title">Select plan</p>
             </div>
           </div>
-          <div class="step-indicator">
-            <div class="indicator-num">3</div>
-            <div class="indicator-text">
+          <div class="step__indecater">
+            <div class="indecater__num 3">3</div>
+            <div class="indecater__text">
               <p class="subtitle">STEP3</p>
-              <p class="mini-title">ADD-ONS</p>
+              <p class="mini__title">Add-ons</p>
             </div>
           </div>
-          <div class="step-indicator">
-            <div class="indicator-num">4</div>
-            <div class="indicator-text">
+          <div class="step__indecater">
+            <div class="indecater__num 4">4</div>
+            <div class="indecater__text">
               <p class="subtitle">STEP4</p>
-              <p class="mini-title">SUMMARY</p>
+              <p class="mini__title">Summary</p>
             </div>
           </div>
         </div>
-        <!-- Sidebar end -->
-        <!-- form container start -->
-        <div class="form-container">
-          <!-- step1 - Personal Info  -->
-          <form class="step" id="step-info">
-            <h3 class="main-title">Personal info</h3>
+        <!-- form steps container -->
+        <div class="steps__container">
+          <!-- step1 -->
+          <form class="step" id="form">
+            <h3 class="main__title">Personal info</h3>
             <p class="description">
               Please provide your name, email address, and phone number.
             </p>
             <ul class="list">
-              <li class="list-item">
-                <div class="input-label">
+              <li class="list__item">
+                <div class="input__labe">
                   <p class="label">Name</p>
                   <p class="warning"></p>
                 </div>
@@ -77,8 +100,8 @@
                   required
                 />
               </li>
-              <li class="list-item">
-                <div class="input-label">
+              <li class="list__item">
+                <div class="input__labe">
                   <p class="label">Email Address</p>
                   <p class="warning"></p>
                 </div>
@@ -90,8 +113,8 @@
                   required
                 />
               </li>
-              <li class="list-item">
-                <div class="input-label">
+              <li class="list__item">
+                <div class="input__labe">
                   <p class="label">Phone Number</p>
                   <p class="warning"></p>
                 </div>
@@ -105,127 +128,135 @@
               </li>
             </ul>
           </form>
-          <!-- STEP 2 - Select Plan -->
-          <div class="step" id="step-plan">
-            <h3 class="main-title">Select your plan</h3>
+          <!-- STEP 2 -->
+          <div class="step" id="step-2">
+            <h3 class="main__title">Select your plan</h3>
             <p class="description">
               You have the option of monthly or yearly billing.
             </p>
-            <div class="plan-card-wrapper" id="plan-cards">
-              <div class="plan-card card">
-                <div class="plan-img">
+            <div class="plan__card_container" id="plan-cards">
+              <div class="plan__card card">
+                <div class="card__img">
                   <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                 </div>
-                <div class="plan-price">
-                  <p class="card-name" id="arcade">Arcade</p>
-                  <p class="card-price">
-                    $<span class="subscription-price">00</span>/<span
-                      class="subscription-duration"
+                <div class="plan__price">
+                  <p class="card__name" id="arcade">Arcade</p>
+                  <p class="card__price">
+                    $<span class="sbscription__price">00</span>/<span
+                      class="sbscription__duration"
                       >xx</span
                     >
                   </p>
-                  <p class="yearly-benefit">2 months free</p>
+                  <p class="yearly__benefit">2 months free</p>
                 </div>
               </div>
-              <div class="plan-card card">
-                <div class="plan-img">
-                  <img src="./assets/images/icon-advanced.svg" alt="advanced" />
+              <div class="plan__card card">
+                <div class="card__img">
+                  <img src="./assets/images/icon-advanced.svg" alt="arcade" />
                 </div>
-                <div class="plan-price">
-                  <p class="card-name" id="advanced">Advance</p>
-                  <p class="card-price">
-                    $<span class="subscription-price">00</span>/<span
-                      class="subscription-duration"
+                <div class="plan__price">
+                  <p class="card__name" id="advance">Advance</p>
+                  <p class="card__price">
+                    $<span class="sbscription__price">00</span>/<span
+                      class="sbscription__duration"
                       >xx</span
                     >
                   </p>
-                  <p class="yearly-benefit">2 months free</p>
+                  <p class="yearly__benefit">2 months free</p>
                 </div>
               </div>
-              <div class="plan-card card">
-                <div class="plan-img">
-                  <img src="./assets/images/icon-pro.svg" alt="pro" />
+              <div class="plan__card card">
+                <div class="card__img">
+                  <img src="./assets/images/icon-pro.svg" alt="arcade" />
                 </div>
-                <div class="plan-price">
-                  <p class="card-name" id="pro">Pro</p>
-                  <p class="card-price">
-                    $<span class="subscription-price">00</span>/<span
-                      class="subscription-duration"
+                <div class="plan__price">
+                  <p class="card__name" id="pro">Pro</p>
+                  <p class="card__price">
+                    $<span class="sbscription__price">00</span>/<span
+                      class="sbscription__duration"
                       >xx</span
                     >
                   </p>
-                  <p class="yearly-benefit">2 months free</p>
+                  <p class="yearly__benefit">2 months free</p>
                 </div>
               </div>
             </div>
             <p id="select-plan-error"></p>
-            <div class="toggle-container">
-              <!-- "selected_plan" by default selected plan in monthly -->
-              <p class="monthly-plan selected-plan" id="monthly">Monthly</p>
+            <div class="toggle__container">
+              <!-- "selected__plan" by default selected palan in monthly -->
+              <p class="monthly__plan selected__plan" id="monthly">Monthly</p>
               <div class="toggle">
-                <div class="toggle-circle" id="toggle"></div>
+                <div class="toggle__circle" id="toggle"></div>
               </div>
-              <p class="yearly-plan" id="yearly">Yearly</p>
+              <p class="yearly__plan" id="yearly">Yearly</p>
+            </div>
+            <div class="toggle">
+              <div class="monthly">Monthly</div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+              <div class="yearly">Yearly</div>
             </div>
           </div>
-          <!-- STEP 3 - Add-ons -->
-          <div class="step" id="step-addon">
-            <h3 class="main-title">Pick add-ons</h3>
+          <!-- STEP 3 -->
+          <div class="step" id="step-3">
+            <h3 class="main__title">Pick add-ons</h3>
             <p class="description">
               Add-ons help enhance your gaming experience.
             </p>
-            <div class="addon-card-wrapper">
-              <div class="addon-card card">
+            <div class="addson__card_container">
+              <div class="addon__card card">
                 <input type="checkbox" name="checkbox" id="" class="checkbox" />
-                <div class="card-text">
-                  <p class="card-name">Online service</p>
-                  <p class="card-description">Access to multiplayer games</p>
+                <div class="card__text">
+                  <p class="card__name">Online service</p>
+                  <p class="card__description">Access to multiplayer games</p>
                 </div>
-                <p class="card-price">
-                  +$<span class="subscription-price">00</span>/<span
-                    class="subscription-duration"
+                <p class="card__price">
+                  +$<span class="sbscription__price">00</span>/<span
+                    class="sbscription__duration"
                     >xx</span
                   >
                 </p>
               </div>
-              <div class="addon-card card">
+              <div class="addon__card card">
                 <input type="checkbox" name="checkbox" id="" class="checkbox" />
-                <div class="card-text">
-                  <p class="card-name">Larger storage</p>
-                  <p class="card-description">Extra 1TB of cloud save</p>
+                <div class="card__text">
+                  <p class="card__name">Larger storage</p>
+                  <p class="card__description">Extra 1TB of cloud save</p>
                 </div>
-                <p class="card-price">
-                  +$<span class="subscription-price">00</span>/<span
-                    class="subscription-duration"
+                <p class="card__price">
+                  +$<span class="sbscription__price">00</span>/<span
+                    class="sbscription__duration"
                     >xx</span
                   >
                 </p>
               </div>
-              <div class="addon-card card">
+              <div class="addon__card card">
                 <input type="checkbox" name="checkbox" id="" class="checkbox" />
-                <div class="card-text">
-                  <p class="card-name">Customizable Profile</p>
-                  <p class="card-description">Custom theme on your profile</p>
+                <div class="card__text">
+                  <p class="card__name">Customizable Profile</p>
+                  <p class="card__description">Custom theme on your profile</p>
                 </div>
-                <p class="card-price">
-                  +$<span class="subscription-price">00</span>/<span
-                    class="sbscription-duration"
+                <p class="card__price">
+                  +$<span class="sbscription__price">00</span>/<span
+                    class="sbscription__duration"
                     >xx</span
                   >
                 </p>
               </div>
             </div>
           </div>
-          <!-- STEP 4 - summary -->
-          <div class="step" id="step-summary">
-            <h3 class="main-title">Finishing up</h3>
+          <!-- STEP 4 -->
+          <div class="step" id="step-4">
+            <h3 class="main__title">Finishing up</h3>
             <p class="description">
               Double-check everything looks OK before confirming.
             </p>
-            <div class="summary-card card">
-              <div class="selected-plan-container">
+            <div class="finishingup__card_container card">
+              <div class="selected__plan_container">
                 <div class="" id="selected-plan"><!-- selected plan --></div>
-                <button class="toggle-plan" id="change-plan">change</button>
+                <button class="change__plan" id="change-plan">change</button>
               </div>
               <ul id="selected-addon">
                 <!-- selected adds-on -->
@@ -235,37 +266,31 @@
               <!-- total amount -->
             </div>
           </div>
-          <!-- STEP 5 - Thank you -->
-          <div class="step thank-you" id="thank-you">
-            <div id="thank-you-img">
-              <img src="./assets/images/icon-thank-you.svg" alt="thank-you" />
+          <!-- last step | thank you -->
+          <div class="step last__step" id="thank-you">
+            <div class="final__img">
+              <img src="./assets/images/icon-thank-you.svg" alt="" />
             </div>
-            <h3 class="main-title">Thank you!</h3>
+            <h3 class="main__title">Thank you!</h3>
             <p class="description">
               Thanks for confirming your subscription! We hope you have fun
               using our platform. If you ever need support, please feel free to
               email us at support@loremgaming.com.
             </p>
           </div>
+          <!-- -------------- -->
           <!-- BUTTON -->
-          <div class="button-container">
-            <button class="button" id="prev-button">Go Back</button>
-            <button type="submit" class="button" id="next-button">
+          <!-- -------------- -->
+          <div class="button__container">
+            <button class="button prev__button" id="prev-button">
+              Go Back
+            </button>
+            <button type="submit" class="button next__button" id="next-button">
               Next Step
             </button>
           </div>
         </div>
       </div>
-    </div>
-    <footer>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Olumide Adenigba</a>.
-      </div>
-    </footer>
-    <script src="./index.js"></script>
+    </main>
   </body>
-  
 </html>
