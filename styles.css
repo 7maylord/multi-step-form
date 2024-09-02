@@ -62,13 +62,10 @@ html {
 }
 
 /* REUSABLE CSS CLASSES */
-
-/* HIDE STEP */
 .step {
     display: none;
 }
 
-/* SHOW ACTIVE STEP */
 .step.active {
     display: inline-block;
 }
@@ -92,7 +89,7 @@ html {
     border-radius: 10px;
     padding: 15px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: border-color 0.3s;
 }
 
 @media (max-width: 768px) {
@@ -207,6 +204,17 @@ html {
     margin-right: auto;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        border-radius: 0;
+        background-image: url('./assets/images/bg-sidebar-mobile.svg');
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 190px;
+    }
+}
+
 /* STEP NUMBER AND NAME CONTAINER */
 .step-indicator {
     display: flex;
@@ -214,7 +222,6 @@ html {
     padding-bottom: 30px;
 }
 
-/* STEP NUMBER */
 .indicator-num {
     border: 1px solid var(--Light-gray);
     width: 40px;
@@ -229,22 +236,12 @@ html {
     margin-right: 15px;
 }
 
-/* ACTIVE STEP NUMBER */
 .indicator-num.active {
     background-color: var(--Light-blue);
     color: var(--Marine-blue);
 }
 
 @media (max-width: 768px) {
-    .sidebar {
-        border-radius: 0;
-        background-image: url('./assets/images/bg-sidebar-mobile.svg');
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        height: 190px;
-    }
-
     .step-indicator {
         padding: 0;
     }
@@ -259,10 +256,8 @@ html {
 }
 
 /*  PLAN STEPS */
-
 .steps-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column: 2 / 3;
     padding-top: 25px;
     padding-right: 25px;
     display: flex;
@@ -334,18 +329,16 @@ html {
 
 .input:hover {
     border-color: var(--Pastel-blue);
-    transition: 0.25s;
+    transition: border-color 0.25s;
 }
 
 .input.error,
 .input.error:hover {
     border-color: var(--Strawberry-red);
-    transition: 0.25s;
+    transition: border-color 0.25s;
 }
 
-/* select your plan | step2 */
-
-/* select plan warning */
+/* STEP 2 | SELECT YOUR PLAN */
 #select-plan-error {
     color: var(--Strawberry-red);
     font-weight: 700;
@@ -374,7 +367,6 @@ html {
     margin-right: 25px;
 }
 
-/* Toggle Switch */
 .toggle-container {
     border-radius: 5px;
     display: flex;
@@ -414,8 +406,7 @@ html {
     right: 0;
     bottom: 0;
     background-color: var(--Marine-blue);    ;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: background-color 0.4s;
 }
 
 .slider:before {
@@ -426,8 +417,7 @@ html {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: transform 0.4s;
 }
 
 input:checked+.slider {
@@ -453,15 +443,11 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-/* add functionality to toggle */
 .toggle.active {
     justify-content: flex-end;
 }
 
-.monthly-plan {
-    opacity: 0.5;
-}
-
+.monthly-plan,
 .yearly-plan {
     opacity: 0.5;
 }
@@ -481,8 +467,6 @@ input:checked+.slider:before {
 .yearly-benefit.show {
     display: inline-block;
 }
-
-/* Toggle switch end */
 
 @media (min-width: 850px) {
     .plan-card-container {
@@ -528,7 +512,7 @@ input:checked+.slider:before {
 }
 
 .next-button:hover {
-    transition: background 0.3s;
+    transition: background-color 0.3s;
     background-color: var(--Purplish-blue);
 }
 
@@ -571,25 +555,7 @@ input:checked+.slider:before {
     margin-bottom: 20px;
 }
 
-/* checkbox */
-/* .checkbox[type='checkbox'] {
-    margin-right: 20px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: none;
-    font: inherit;
-    color: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 0.15em solid var(--Light-gray);
-    cursor: pointer;
-    border-radius: 0.2em;
-    transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;    
-    transition: border-color 0.3s, background-color 0.3s;
-} */
+
 .checkbox[type='checkbox'] {
     margin-right: 20px;
     -webkit-appearance: none;
@@ -607,12 +573,10 @@ input:checked+.slider:before {
     transition: border-color 0.3s, background-color 0.3s;
 }
 
-
-/* checkbox hover only for big screen */
 @media (min-width: 480px) {
     .checkbox[type='checkbox']:hover {
         border-color: var(--Marine-blue);
-        transition: 0.25s;
+        transition: border-color 0.25s;
     }
 }
 
@@ -637,7 +601,6 @@ input:checked+.slider:before {
     transform: scale(1);
 }
 
-/* card title */
 .card-text {
     margin-right: auto;
 }
@@ -671,7 +634,6 @@ input:checked+.slider:before {
     color: var(--Purplish-blue);
 }
 
-/* selected plan */
 #selected-plan {
     display: flex;
     align-items: center;
@@ -689,7 +651,6 @@ input:checked+.slider:before {
     margin-left: 4px;
 }
 
-/* selected add-on */
 #selected-addon>li {
     display: flex;
     align-self: center;
@@ -718,7 +679,7 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 20px;
 }
 
 #total>span:nth-child(1) {
@@ -735,6 +696,10 @@ input:checked+.slider:before {
 @media (max-width: 481px) {
     #total>span:nth-child(2) {
         font-size: 2rem;
+    }
+    
+    .change-plan {
+        font-size: 1.6rem;
     }
 }
 
